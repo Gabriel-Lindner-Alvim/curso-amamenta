@@ -46,26 +46,30 @@ header {
   top: 0;
   z-index: 10;
   height: 10vh;
+
+  display: flex;              /* 🔥 transforma em flex container */
+  align-items: center;        /* centraliza verticalmente */
+  justify-content: space-between; /* distribui logo/título à esquerda e menu à direita */
+  padding: 0 2vw;             /* respiro lateral */
+}
+
+
+.left-side {
+  display: flex;                  /* 🔥 coloca logo e título lado a lado */
+  align-items: center;            /* centraliza vertical */
+  gap: 1vw;                       /* espaço entre logo e título */
 }
 
 .titulotesteira{
     color: white;
-		margin-bottom: -20px;
-		font-size: 20px;
-    float: left;
-    padding-left: 3%; 
-    text-align: left;
-    padding-top: 4vh;
+		font-size: 1.3rem;
+    margin: 0;                 /* remove margem default do h5 */
 }
 
-.hamburguertesteira{
-    color: white;
-		margin-bottom: -20px;
-		font-size: 1.5vh !important;
-    float: left;
-    padding-left: 3%; 
-    text-align: left;
-    padding-top: 2vh;
+.hamburguertesteira {
+  color: white;
+  font-size: 1.5vh !important;
+  margin: 0;
 }
 
 .svg-container{
@@ -74,19 +78,14 @@ display: flex !important;
   align-items: center !important;
 }
 
-.logo{
-  float: left; 
-  padding-left: 3%; 
-  margin-top: 2vh; 
+.logo {
   height: 5vh;
 }
 
 .pnan-grande {
-  float: left; 
-  padding-left: 5vw; 
-  margin-top: 2vh; 
   height: 6vh;
 }
+
 
 
 .hamburguer {
@@ -95,17 +94,13 @@ display: flex !important;
 
 .un {
   margin: 0;
-  font-size: 32px;
-
+  font-size: 1.5rem;
 }
 
 .header-container {
   display: flex;
-  justify-content: flex-end; /* joga para a direita */
-  align-items: center;       /* alinha verticalmente */
-  gap: 2vw;                  /* margem proporcional entre os dois */
-  margin-top: 3vh;           /* mantém respiro em cima */
-  padding-right: 2vw;
+  align-items: center;    /* centraliza vertical dentro do container */
+  gap: 2vw;               /* espaço entre UN e hambúrguer */
 }
 
 
@@ -1172,4 +1167,42 @@ p {
   margin-top: -1px;
   float: right;
   margin-right: 4vw;
+}
+.full-bleed {
+  margin-top: 5vh;
+  width: 100vw;
+  background: #448F96;       /* cor que você quiser */
+  padding: 24px 0;           /* opcional: respiro vertical */
+  border-radius: 0;          /* se não quiser cantos arredondados */
+
+}
+
+.ol-circulos {
+  list-style: none;               /* tira numeração padrão */
+  counter-reset: my-counter;      /* inicia contador */
+  padding-left: 0;                /* remove recuo padrão */
+}
+
+.ol-circulos li {
+  counter-increment: my-counter;  /* incrementa a cada li */
+  margin: 12px 0;                 /* espaço entre itens */
+  display: flex;                  /* alinha número e texto */
+  align-items: center;
+  color: white;
+  font-family: 'Roboto';
+}
+
+.ol-circulos li::before {
+  content: counter(my-counter);   /* insere número */
+  background: white;              /* fundo branco */
+  color: #448F96;                 /* cor do número */
+  font-weight: bold;
+  border-radius: 50%;             /* círculo */
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;             /* espaço entre número e texto */
+  box-shadow: 0 0 3px rgba(0,0,0,0.2); /* sombra leve opcional */
 }

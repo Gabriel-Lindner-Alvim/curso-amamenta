@@ -70,6 +70,31 @@ async function carregarPagina(numero) {
     const area = document.getElementById("area-principal");
     area.innerHTML = html;
 
+    function ajustarAlturaFullBleed() {
+      const fullBleed = document.querySelector('.full-bleed');
+      if (!fullBleed) return;
+
+      // remove altura extra antes de recalcular
+      fullBleed.style.minHeight = "";  
+
+      // posição inferior atual da div em relação ao topo da página
+      const bottomDiv = fullBleed.getBoundingClientRect().bottom + window.scrollY;
+
+      // altura total do body/documento
+      const alturaPagina = document.body.scrollHeight;
+
+      // quanto falta para o final da página
+      const faltante = alturaPagina - bottomDiv;
+
+      // aplica a nova altura mínima (conteúdo + espaço faltante)
+      fullBleed.style.minHeight = (fullBleed.scrollHeight + Math.max(faltante, 0)) + "px";
+    }
+
+    // chama no load inicial
+    window.addEventListener("load", ajustarAlturaFullBleed);
+    // chama no resize (tela maior → menor ou menor → maior)
+    window.addEventListener("resize", ajustarAlturaFullBleed);
+
     // dentro do carregarPagina, logo após area.innerHTML = html;
 
     const accordionButtons = area.querySelectorAll('.accordion-button');
