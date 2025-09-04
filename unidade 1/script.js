@@ -1,5 +1,5 @@
 const totalPaginas = 16;
-let paginaAtual = parseInt(sessionStorage.getItem("paginaAtual")) || 0;
+let paginaAtual = parseInt(sessionStorage.getItem("paginaAtual")) || 1;
 const cachePaginas = {};
 const imagensPrecarregadas = window.imagensPrecarregadas || new Set();
 window.imagensPrecarregadas = imagensPrecarregadas;
@@ -7,13 +7,6 @@ window.imagensPrecarregadas = imagensPrecarregadas;
 
 // Configurações por página
 const configuracoesPagina = {
-  0: {
-    backgroundImage: "url(../img/header_titulo.svg)",
-    backgroundSize: "cover",
-  },
-  1: {
-    backgroundColor: "#027EC7",
-  },
   3: {
     backgroundImage: "url('img/un1/banana plate.png')",
     backgroundSize: "cover",
@@ -157,7 +150,7 @@ async function carregarPagina(numero) {
     await Promise.all(svgPromises);
 
     document.getElementById("nextBtn").hidden = numero === totalPaginas;
-    document.getElementById("prevBtn").hidden = numero === 0;
+    document.getElementById("prevBtn").hidden = numero === 1;
 
 
     if (numero + 1 <= totalPaginas && !cachePaginas[numero + 1]) {
@@ -179,7 +172,7 @@ async function carregarPagina(numero) {
 
 
 document.getElementById("prevBtn").addEventListener("click", () => {
-  if (paginaAtual > 0) {
+  if (paginaAtual > 1) {
     paginaAtual--;
     sessionStorage.setItem("paginaAtual", paginaAtual);
     carregarPagina(paginaAtual);

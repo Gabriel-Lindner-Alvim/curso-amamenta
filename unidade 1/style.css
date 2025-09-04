@@ -3,7 +3,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto';
   background-color: white;
   position: relative;
   overflow-x: hidden;
@@ -35,12 +35,11 @@ v  /* não remover esse v, pelo amor de deus*/
 }
 
 header {
-  background-color: #0E9FE9;
+  background-color: #AD6255;
   color: white;
-  padding: 15px 30px;
+
   font-size: 1.5em;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   position: sticky;
@@ -52,11 +51,11 @@ header {
 .titulotesteira{
     color: white;
 		margin-bottom: -20px;
-		font-size: 1.5vh !important;
+		font-size: 20px;
     float: left;
     padding-left: 3%; 
     text-align: left;
-    padding-top: 2vh;
+    padding-top: 4vh;
 }
 
 .hamburguertesteira{
@@ -75,10 +74,10 @@ display: flex !important;
   align-items: center !important;
 }
 
-.pnan{
+.logo{
   float: left; 
   padding-left: 3%; 
-  margin-top: 3vh; 
+  margin-top: 2vh; 
   height: 5vh;
 }
 
@@ -89,30 +88,26 @@ display: flex !important;
   height: 6vh;
 }
 
-.flor-header{
-  float: left; 
-  height: 10vh;
-}
 
 .hamburguer {
-  float: right; 
-  padding-right: 3%; 
-  margin-top: 4vh; 
-  height: 2vh;
+  height: 2.5vh; /* aumenta/diminui conforme necessidade */
 }
 
 .un {
-  float: right; 
-  padding-right: 0.8%; 
-  margin-top: 3.5vh; 
+  margin: 0;
+  font-size: 32px;
 
 }
 
-header b {
-  font-family: 'Montserrat', 
-  sans-serif; 
-  font-size: 2vh;
+.header-container {
+  display: flex;
+  justify-content: flex-end; /* joga para a direita */
+  align-items: center;       /* alinha verticalmente */
+  gap: 2vw;                  /* margem proporcional entre os dois */
+  margin-top: 3vh;           /* mantém respiro em cima */
+  padding-right: 2vw;
 }
+
 
 .container-flex {
   flex: 1;
@@ -175,7 +170,7 @@ article * {
 }
 
 article p {
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 	line-height: 31px !important;
 	padding-top: 10px !important;
 	padding-bottom: 10px !important;
@@ -197,7 +192,7 @@ h3, li{
 	margin: 0;
 	padding-left: 50px;
 	position: relative;
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Roboto";
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 120% !important;
@@ -234,7 +229,7 @@ h3, li{
   }
 
   .custom-ol {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: normal;
   color: #333;
@@ -243,14 +238,14 @@ h3, li{
 }
 
 .custom-ol li::marker {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 18px;       /* Tamanho do número */
   color: #0367a5;         /* Cor do número */
   font-weight: bold;       /* Negrito */
 }
 
 .custom-ol-2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: normal;
   color: #333;
@@ -259,14 +254,14 @@ h3, li{
 }
 
 .custom-ol-2 li::marker {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 32px;       /* Tamanho do número */
   color: #0367a5;         /* Cor do número */
   font-weight: bold;       /* Negrito */
 }
 
 .custom-ol-3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: normal;
   color: #333;
@@ -275,7 +270,7 @@ h3, li{
 }
 
 .custom-ol-3 li::marker {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto";
   font-size: 48px;       /* Tamanho do número */
   color: #0367a5;         /* Cor do número */
   font-weight: bold;       /* Negrito */
@@ -293,7 +288,7 @@ h3, li{
 
 li span{
 	
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 	line-height: 31px !important;
 	padding-top: 20px !important;
 	padding-bottom: 20px !important;
@@ -318,11 +313,14 @@ ul.sumario li{
 }
 
 h1 {
-	font-size: 25px;
-	line-height: 44px;
-	font-weight: bold;
-	font-family: 'montserrat', sans-serif;
-
+	font-size: 42px;
+	line-height: 120%;
+	font-family: "Roboto";
+  background-color: #448F961A;
+  display: inline-block;
+  color: #448F96;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 
@@ -331,7 +329,7 @@ h2 {
 	color: #242628;
 	font-weight: bold;
 	line-height: 48px !important;
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 }
 
 h3 {
@@ -339,7 +337,7 @@ h3 {
 	color: #242628;
 	font-weight: bold;
 	line-height: 120% !important;
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 
 }
 
@@ -348,13 +346,13 @@ h4 {
 	color: #242628;
 	font-weight: 600;
 	line-height: 120% !important;
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 }
 
 p {
 	font-size: 18px;
 	line-height: 140% !important;
-	font-family: 'montserrat', sans-serif;
+	font-family: "Roboto";
 	color: #242628;
 }
 
@@ -688,6 +686,9 @@ p {
   z-index: 0;
 }
 
+.dropdown {
+  margin: 0; /* remove ajustes desnecessários */
+}
 
 .custom-dropdown {
   margin-top: 11vh !important;
@@ -861,9 +862,9 @@ p {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.95);
+  background: #F1F1F4;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 100px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 0.95rem;
