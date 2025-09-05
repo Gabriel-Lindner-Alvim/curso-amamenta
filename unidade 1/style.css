@@ -45,7 +45,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  height: 10vh;
+
+  min-height: 5rem;
 
   display: flex;              /* 🔥 transforma em flex container */
   align-items: center;        /* centraliza verticalmente */
@@ -1205,4 +1206,16 @@ p {
   justify-content: center;
   margin-right: 12px;             /* espaço entre número e texto */
   box-shadow: 0 0 3px rgba(0,0,0,0.2); /* sombra leve opcional */
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;   /* centraliza verticalmente */
+  gap: 8px;              /* espaço entre a imagem e o texto */
+  margin: 6px 0;
+}
+
+.bullet-item img {
+  width: 50px;  
+  height: 50px;
 }

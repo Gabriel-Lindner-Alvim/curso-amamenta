@@ -1,37 +1,37 @@
 <div class="container-fluid text-start" style="padding-left: 12vw; padding-right: 12vw;">
   <div class="row">
-    <div class="col-md-6 borda-inicial">
-      <h2 class="primeira-frase">Apresentação da Unidade</h2>
+    <div class="col-md-12 borda-inicial">
+      <h1 class="primeira-frase">O acompanhamento do desenvolvimento infantil</h1>
+    </div>
+    <div class="col-md-6">
 
-      <p>Vamos iniciar explorando um tema de grande relevância para a saúde pública: a desnutrição em crianças 
-        e gestantes. Você sabia que a desnutrição é uma das formas mais prevalentes de má nutrição e pode trazer 
-        impactos significativos para o desenvolvimento e a saúde de crianças, além de complicações para as 
-        gestantes? Este agravo está profundamente relacionado a questões sociais e vulnerabilidades que afetam 
-        milhões de pessoas, tornando-o um desafio para o SUS e para os profissionais de saúde.
+
+      <p>Para iniciar os estudos desta unidade, é importante ressaltar que o acompanhamento 
+        do crescimento e do desenvolvimento infantil por profissionais da saúde é um direito 
+        assegurado no Estatuto da Criança e do Adolescente (ECA) (BRASIL, 1990).
       </p>
 
+      <p>Portanto, a qualificação e a humanização dos processos de trabalho e da abordagem dos 
+        profissionais da Atenção Primária à Saúde é fundamental durante os primeiros mil dias 
+        e na primeira infância.</p>
+
+      <div class="bullet-item" style="background-image: linear-gradient(to right, #EFF1F7, white); border-radius: 100px;">
+        <img src="./img/clique.svg">
+        <p style="margin-bottom: 0;"><span><i>Clique nas imagens ao lado para conhecer melhor sobre esses períodos.</i></span></p>
+      </div>
 
     </div>
 
-    <div class="col-md-6 borda-inicial">
+    <div class="col-md-6">
 
-      <p style="font-size: 30PX; font-weight: bold; color: #0367A5;">Nesta unidade, você irá:</p>
 
-      <div class="d-flex justify-content-center flex-wrap gap-3">
+      <div class="d-flex flex-column align-items-center gap-3">
         <button type="button" data-bs-toggle="modal" data-bs-target="#ModalCompreender" style="background: none; border: none; padding: 0;">
-          <img src="img/un1/nesta-unidade/Component 1.svg" class="img-fluid aumentar" draggable="false">
+          <img src="./img/slide2/dias.svg" onmouseover="this.src='./img/slide2/dias-hover.svg'" onmouseout="this.src='./img/slide2/dias.svg'" class="img-fluid aumentar" draggable="false">
         </button>
 
         <button type="button" data-bs-toggle="modal" data-bs-target="#ModalClassificar" style="background: none; border: none; padding: 0;">
-          <img src="img/un1/nesta-unidade/Component 2.svg" class="img-fluid aumentar" draggable="false">
-        </button>
-
-        <button type="button" data-bs-toggle="modal" data-bs-target="#ModalAnalisar" style="background: none; border: none; padding: 0;">
-          <img src="img/un1/nesta-unidade/Component 5.svg" class="img-fluid aumentar" draggable="false">
-        </button>
-
-        <button type="button" data-bs-toggle="modal" data-bs-target="#ModalExplorar" style="background: none; border: none; padding: 0;">
-          <img src="img/un1/nesta-unidade/Component 3.svg" class="img-fluid aumentar" draggable="false">
+          <img src="./img/slide2/infancia.svg" onmouseover="this.src='./img/slide2/infancia-hover.svg'" onmouseout="this.src='./img/slide2/infancia.svg'" class="img-fluid aumentar" draggable="false">
         </button>
       </div>
 
@@ -46,10 +46,10 @@
 
         <!-- Container for image and overlay -->
         <div style="position: relative; display: inline-block;">
-          <img src="img/un1/nesta-unidade/compreender-modal.svg" class="img-fluid" draggable="false">
+          <img src="./img/slide2/modal-dias.svg" class="img-fluid" draggable="false">
           
           <!-- Close button in top-right of image -->
-          <img src="../img/botao-x.svg" 
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'" onmouseout="this.src='../img/botao-x.svg'" 
                style="position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; cursor: pointer;"
                draggable="false"
                onclick="bootstrap.Modal.getInstance(document.getElementById('ModalCompreender')).hide();">
@@ -67,53 +67,13 @@
 
         <!-- Container for image and overlay -->
         <div style="position: relative; display: inline-block;">
-          <img src="img/un1/nesta-unidade/classificar-modal.svg" class="img-fluid" draggable="false">
+          <img src="./img/slide2/modal-infancia.svg" class="img-fluid" draggable="false">
           
           <!-- Close button in top-right of image -->
-          <img src="../img/botao-x.svg" 
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'" onmouseout="this.src='../img/botao-x.svg'" 
                style="position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; cursor: pointer;"
                draggable="false"
                onclick="bootstrap.Modal.getInstance(document.getElementById('ModalClassificar')).hide();">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="ModalAnalisar" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content" style="background: transparent; border: none;">
-      <div class="modal-body position-relative p-0" style="text-align: center;">
-
-        <!-- Container for image and overlay -->
-        <div style="position: relative; display: inline-block;">
-          <img src="img/un1/nesta-unidade/analisar-modal.svg" class="img-fluid" draggable="false">
-          
-          <!-- Close button in top-right of image -->
-          <img src="../img/botao-x.svg" 
-               style="position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; cursor: pointer;"
-               draggable="false"
-               onclick="bootstrap.Modal.getInstance(document.getElementById('ModalAnalisar')).hide();">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="ModalExplorar" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content" style="background: transparent; border: none;">
-      <div class="modal-body position-relative p-0" style="text-align: center;">
-
-        <!-- Container for image and overlay -->
-        <div style="position: relative; display: inline-block;">
-          <img src="img/un1/nesta-unidade/explorar-modal.svg" class="img-fluid" draggable="false">
-          
-          <!-- Close button in top-right of image -->
-          <img src="../img/botao-x.svg" 
-               style="position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; cursor: pointer;"
-               draggable="false"
-               onclick="bootstrap.Modal.getInstance(document.getElementById('ModalExplorar')).hide();">
         </div>
       </div>
     </div>

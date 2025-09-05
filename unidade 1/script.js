@@ -7,11 +7,8 @@ window.imagensPrecarregadas = imagensPrecarregadas;
 
 // Configurações por página
 const configuracoesPagina = {
-  3: {
-    backgroundImage: "url('img/un1/banana plate.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "40%",
-    backgroundAttachment: "fixed",
+  4: {
+    backgroundColor: "#e8f8c8",
   },
 
   16: {
@@ -94,8 +91,8 @@ async function carregarPagina(numero) {
     window.addEventListener("load", ajustarAlturaFullBleed);
     // chama no resize (tela maior → menor ou menor → maior)
     window.addEventListener("resize", ajustarAlturaFullBleed);
+    ajustarAlturaFullBleed();
 
-    // dentro do carregarPagina, logo após area.innerHTML = html;
 
     const accordionButtons = area.querySelectorAll('.accordion-button');
     accordionButtons.forEach(btn => {
