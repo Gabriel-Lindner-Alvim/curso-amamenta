@@ -1213,9 +1213,95 @@ p {
   align-items: center;   /* centraliza verticalmente */
   gap: 8px;              /* espaço entre a imagem e o texto */
   margin: 6px 0;
+  background-image: linear-gradient(to right, #EFF1F7, white); 
+  border-radius: 100px;
 }
 
 .bullet-item img {
   width: 50px;  
   height: 50px;
+}
+
+.lampada {
+    position: relative;                /* necessário para posicionar o ::before */
+    border: 3px solid #B8B8F3;
+    border-left: none;  
+    border-radius: 20px;
+    background-color: #f1f1fd;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .lampada::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/lampada.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .lampada p {
+    margin: 0;
+  }
+
+  .alfinete {
+    position: relative;                /* necessário para posicionar o ::before */
+    border: 3px solid #B4D775;
+    border-left: none;  
+    border-radius: 20px;
+    background-color: #e3eecf;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .alfinete::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/alfinete.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .alfinete p {
+    margin: 0;
+  }
+
+  .alfinete-topo {
+  position: relative;
+  border: 3px solid #F3CA40;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #f6ebc7;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.alfinete-topo::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/alfinete-amarelo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alfinete-topo p {
+  margin: 0;
 }
