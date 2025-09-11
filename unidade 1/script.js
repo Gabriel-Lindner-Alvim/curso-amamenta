@@ -10,10 +10,8 @@ const configuracoesPagina = {
   4: {
     backgroundColor: "#e8f8c8",
   },
-
-  16: {
-    backgroundImage: "url(img/un1/feijao.png)",
-    backgroundSize: "cover",
+  7: {
+    backgroundColor: "#ceeff1ff",
   },
 
 };

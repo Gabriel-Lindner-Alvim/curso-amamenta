@@ -186,28 +186,13 @@ h3, li{
 
  ul li {
 	margin: 0;
-	padding-left: 50px;
 	position: relative;
 	font-family: "Roboto";
-	font-weight: bold;
-	font-size: 24px;
+	font-size: 18px;
 	line-height: 120% !important;
-	list-style: none;
-	
+	list-style: none;	
   }
-  
-  ul li::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 16px;
-	height: 16px;
-	background-image: url('../img/bullet.svg');
-	background-size: contain;
-	background-repeat: no-repeat;
-  }
+
 
   ul li.bullet-claro::before {
   background-image: url('../img/bullet-claro.svg');
@@ -640,9 +625,9 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70vw; /* 70% da largura da viewport */
+  width: 45vw; 
   height: 100vh; /* ou a altura que você desejar */
-  background-image: url('img/un1/kid-river.png');
+  background-image: url('img/amamenta-coluna.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1303,5 +1288,89 @@ p {
 }
 
 .alfinete-topo p {
+  margin: 0;
+}
+
+.alfinete-topo-azul {
+  position: relative;
+  border: 3px solid #448F96;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #abd7db;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.alfinete-topo-azul::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/alfinete-azul.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alfinete-topo-azul p {
+  margin: 0;
+}
+
+.alfinete-topo-rose {
+  position: relative;
+  border: 3px solid #CC7465;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #ffe2dd;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.alfinete-topo-rose::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/alfinete-rose.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alfinete-topo-rose p {
+  margin: 0;
+}
+
+.alfinete-topo-lavanda {
+  position: relative;
+  border: 3px solid #B8B8F3;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #f0f0ff;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.alfinete-topo-lavanda::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/alfinete-lavanda.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alfinete-topo-lavanda p {
   margin: 0;
 }
