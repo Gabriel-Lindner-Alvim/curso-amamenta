@@ -151,7 +151,8 @@ async function carregarPagina(numero) {
         if (painel) painel.classList.add("active");
       });
     });
-
+    
+    
 
     const stepButtons = area.querySelectorAll(".step");
     const stepPanels = area.querySelectorAll(".step-panel");
