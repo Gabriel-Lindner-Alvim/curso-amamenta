@@ -890,8 +890,8 @@ p {
 
 .maincontainer {
   position: relative;
-  width: 400px;
-  height: 350px;
+  width: 500px;
+  height: 500px;
   cursor: pointer;
 }
 
@@ -914,22 +914,16 @@ p {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: #E0F1FE;
+  background: #f1f1f1;
   color: #333;
   text-align: center;
-  border-radius: 12px;
-  border: 2px solid #027EC7;
+  border-radius: 20px;
   transition: background-color 0.3s ease;
-}
-
-.thecard:hover .thefront,
-.thecard:hover .theback {
-  background: #7DCFFC; /* nova cor no hover */
 }
 
 .theback {
   transform: rotateY(180deg);
-  padding: 20px;
+
 }
 
 .accordion-wrapper {
@@ -1404,7 +1398,7 @@ p {
 }
 
 .tab-card {
-  background: #dbdbdb;
+  background: #f3f3f3;
   border-radius: 12px;
   padding: 16px;
   margin: 0 auto;
@@ -1512,4 +1506,157 @@ p {
 .hover-swap .variant-top,
 .hover-swap .variant-bottom{
   opacity: 0;               /* começam escondidas */
+}
+
+.steps-card {
+  margin: 0 auto;
+}
+
+.steps-nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.steps-nav::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0; /* start at very left */
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Default style already exists, so we only override per step */
+.step.active[data-step="1"] {
+  border-color: #e57373;
+  color: #e57373;
+  background: #fff5f5;
+}
+
+.step.active[data-step="2"] {
+  border-color: #9787DB;
+  color: #9787DB;
+  background: #f6f4ff;
+}
+
+.step.active[data-step="3"] {
+  border-color: #DBB636;
+  color: #DBB636;
+  background: #fff9e6;
+}
+
+.step.active[data-step="4"] {
+  border-color: #8DAC55;
+  color: #8DAC55;
+  background: #f5fce6;
+}
+
+.step.active[data-step="5"] {
+  border-color: #448F96;
+  color: #448F96;
+  background: #e8f6f6;
+}
+
+
+.steps-content {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.step-panel {
+  display: none;
+}
+
+.step-panel.active {
+  display: block;
+}
+
+.step-panel h4 {
+  margin-top: 0;
+  color: #e57373;
+}
+
+#step2.active h4 {
+  color: #9787DB;
+}
+
+#step3.active h4 {
+  color: #DBB636;
+}
+
+#step4.active h4 {
+  color: #8DAC55;
+}
+
+#step5.active h4 {
+  color: #448F96;
+}
+
+.info-box {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 40px 16px 16px;
+  min-height: 180px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.info-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: white;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.info-box:hover .info-overlay {
+  background: #fbe9e7; /* versão clara de #CC7465 */
+}
+
+.info-icon,
+.info-box p {
+  position: relative;
+  z-index: 2;
+}
+
+.info-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.info-box p {
+  margin-top: 20px;
 }

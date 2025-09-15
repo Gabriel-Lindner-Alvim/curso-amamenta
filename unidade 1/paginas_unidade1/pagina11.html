@@ -12,5 +12,57 @@
       <p>Isso significa reconhecer que existem diversas barreiras que dificultam ou impedem esse processo, e que os profissionais de saúde têm um papel fundamental em criar um ambiente acolhedor, acessível e livre de discriminações (Costa et al., 2024).</p>
     </div>
 
+    <div class="col-md-6">
+      <button type="button" 
+        data-bs-toggle="modal" 
+        data-bs-target="#ModalGlossario"
+        style="background: none; border: none; padding: 0;"
+        onmouseover="this.querySelector('img').src='./img/glossario-hover.svg'"
+        onmouseout="this.querySelector('img').src='./img/glossario.svg'">
+        <div style="
+            position: relative;
+            border: 3px solid #B4D775;
+            border-top: none;
+            border-radius: 20px;
+            background-color: #e3eecf;
+            padding: 10px 16px 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          ">
+          <img src="./img/glossario.svg" style="width: 80px; height: 80px; flex-shrink: 0;">
+          <p style="margin: 0; text-align: left;">
+            Convidamos você a clicar para conhecer um termo muito importante neste contexto: o capacitismo.
+          </p>
+        </div>
+      </button>
+      <p>Discutir esse tema é um passo importante para tornar o cuidado em saúde mais equitativo, humano e centrado na pessoa. Também é uma forma de fortalecer os princípios do SUS, como a universalidade e a integralidade do cuidado.</p>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img src="./img/familias.svg" class="img-fluid">
+    </div>
+
+
+  </div>
+</div>
+
+<div class="modal fade" id="ModalGlossario" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/capacitismo.svg" class="img-fluid" draggable="false">
+          
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'" onmouseout="this.src='../img/botao-x.svg'" 
+               style="position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; cursor: pointer;"
+               draggable="false"
+               onclick="bootstrap.Modal.getInstance(document.getElementById('ModalGlossario')).hide();">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

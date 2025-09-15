@@ -127,6 +127,20 @@ async function carregarPagina(numero) {
       });
     });
 
+    const stepButtons = area.querySelectorAll(".step");
+    const stepPanels = area.querySelectorAll(".step-panel");
+
+    stepButtons.forEach(step => {
+      step.addEventListener("click", () => {
+        stepButtons.forEach(s => s.classList.remove("active"));
+        stepPanels.forEach(p => p.classList.remove("active"));
+
+        step.classList.add("active");
+        const panel = area.querySelector(`#step${step.dataset.step}`);
+        if (panel) panel.classList.add("active");
+      });
+    });
+
      const hoverBoxes = area.querySelectorAll('.hover-swap');
     hoverBoxes.forEach(box => {
       const topImg = box.querySelector('.variant-top');
