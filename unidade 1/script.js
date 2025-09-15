@@ -127,6 +127,32 @@ async function carregarPagina(numero) {
       });
     });
 
+    const icones = area.querySelectorAll(".icon-button");
+    const paineis = area.querySelectorAll(".painel");
+
+    icones.forEach(icone => {
+      icone.addEventListener("click", () => {
+        icones.forEach((i, index) => {
+          i.classList.remove("active");
+          const img = i.querySelector("img");
+          img.src = `./img/slide8/${index + 1}.svg`; // volta para imagem normal
+        });
+
+        paineis.forEach(p => p.classList.remove("active"));
+
+        icone.classList.add("active");
+
+        // troca imagem para versão hover do botão clicado
+        const imgAtivo = icone.querySelector("img");
+        const indice = Array.from(icones).indexOf(icone) + 1;
+        imgAtivo.src = `./img/slide8/${indice}-hover.svg`;
+
+        const painel = area.querySelector(`#${icone.dataset.panel}`);
+        if (painel) painel.classList.add("active");
+      });
+    });
+
+
     const stepButtons = area.querySelectorAll(".step");
     const stepPanels = area.querySelectorAll(".step-panel");
 

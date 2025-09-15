@@ -1660,3 +1660,46 @@ p {
 .info-box p {
   margin-top: 20px;
 }
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+
+  width: 100%;
+}
+
+/* Ícones posicionados com absolute — você pode ajustar para ficar no arco desejado */
+.icon-button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+/* Exemplo de posicionamento — você ajusta os valores */
+.icon-button:nth-child(2) { top: 7%; left: 78%; }
+.icon-button:nth-child(3) { top: 25%; left: 90%; }
+.icon-button:nth-child(4) { top: 45%; left: 95%; }
+.icon-button:nth-child(5) { top: 65%; left: 90%; }
+.icon-button:nth-child(6) { top: 80%; left: 78%; }
+.icon-button:nth-child(7) { top: 92%; left: 58%; }
+
+/* Painéis de conteúdo */
+.painel { display: none; }
+.painel.active { display: block; }
