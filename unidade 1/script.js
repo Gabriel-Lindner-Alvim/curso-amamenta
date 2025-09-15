@@ -110,6 +110,55 @@ async function carregarPagina(numero) {
       });
     });
 
+        // --- TABS (Green/Yellow/Red sections) ---
+    const tabButtons = area.querySelectorAll(".tab-btn");
+    const tabPanels = area.querySelectorAll(".tab-panel");
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Remove 'active' from all buttons and panels
+        tabButtons.forEach(b => b.classList.remove("active"));
+        tabPanels.forEach(p => p.classList.remove("active"));
+
+        // Add 'active' to clicked button and matching panel
+        btn.classList.add("active");
+        const targetPanel = area.querySelector(`#${btn.dataset.tab}`);
+        if (targetPanel) targetPanel.classList.add("active");
+      });
+    });
+
+     const hoverBoxes = area.querySelectorAll('.hover-swap');
+    hoverBoxes.forEach(box => {
+      const topImg = box.querySelector('.variant-top');
+      const bottomImg = box.querySelector('.variant-bottom');
+
+      function showTop(){
+        topImg.style.opacity = 1;
+        bottomImg.style.opacity = 0;
+      }
+      function showBottom(){
+        topImg.style.opacity = 0;
+        bottomImg.style.opacity = 1;
+      }
+      function reset(){
+        topImg.style.opacity = 0;
+        bottomImg.style.opacity = 0;
+      }
+
+      box.addEventListener('mousemove', (e) => {
+        const rect = box.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const half = rect.height / 2;
+
+        if (y < half) {
+          showTop();
+        } else {
+          showBottom();
+        }
+      });
+
+      box.addEventListener('mouseleave', reset);
+    });
 
     const trigger = area.querySelector('#img-reveal');
     if (trigger) {
@@ -120,8 +169,6 @@ async function carregarPagina(numero) {
           target.classList.toggle('is-open');
           const open = target.classList.contains('is-open');
           target.setAttribute('aria-hidden', String(!open));
-
-          // Esconde a imagem depois do clique
           trigger.style.display = "none";
         });
       }
@@ -144,13 +191,10 @@ async function carregarPagina(numero) {
       });
 
     const imagensCards = area.querySelectorAll('.img-hover-effect');
-      
-          const cardInicial = area.querySelector('.img-3');
+    const cardInicial = area.querySelector('.img-3');
       if (cardInicial) {
         cardInicial.classList.add('active');
       }
-
-
     imagensCards.forEach(card => {
       card.addEventListener('click', () => {
         imagensCards.forEach(c => c.classList.remove('active'));

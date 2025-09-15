@@ -1263,6 +1263,34 @@ p {
     margin: 0;
   }
 
+    .alfinete-lavanda {
+    position: relative;                /* necessário para posicionar o ::before */
+    border: 3px solid #B8B8F3;
+    border-left: none;  
+    border-radius: 20px;
+    background-color: #f0f0ff;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .alfinete-lavanda::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/alfinete-lavanda.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .alfinete-lavanda p {
+    margin: 0;
+  }
+
   .alfinete-topo {
   position: relative;
   border: 3px solid #F3CA40;
@@ -1373,4 +1401,115 @@ p {
 
 .alfinete-topo-lavanda p {
   margin: 0;
+}
+
+.tab-card {
+  background: #dbdbdb;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  background: #ddd;
+  transition: background 0.3s;
+  color: white
+}
+
+.tab-btn[data-tab="tab1"] { background: #9BBD5D; }   /* green */
+.tab-btn[data-tab="tab2"] { background: #DBB636; }   /* orange/yellow */
+.tab-btn[data-tab="tab3"] { background: #CC7465; }   /* red */
+
+.tab-btn.active {
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+}
+
+.tab-content {
+
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  min-height: 150px;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.nuvem-topo {
+  position: relative;
+  border: 3px solid #F3CA40;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #f6ebc7;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.nuvem-topo::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/nuvem-topo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nuvem-topo p {
+  margin: 0;
+}
+
+.material-box {
+  display: flex;
+  align-items: center; /* ícone alinhado ao topo do texto */
+  gap: 12px; /* espaço entre o ícone e o texto */
+}
+
+.material-box img {
+  width: 80px; /* tamanho fixo para o ícone */
+  height: auto;
+  flex-shrink: 0; /* impede o ícone de encolher em telas menores */
+}
+
+.material-text  {
+  margin-left: 30px;
+}
+
+.hover-swap{
+  position: relative;
+  width: 500px;
+  height: 450px;    /*height fixo */
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.hover-swap .img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .2s ease;
+  pointer-events: none;     /* garante que o contêiner receba o mousemove */
+}
+
+.hover-swap .variant-top,
+.hover-swap .variant-bottom{
+  opacity: 0;               /* começam escondidas */
 }
