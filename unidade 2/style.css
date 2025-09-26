@@ -1229,6 +1229,62 @@ p {
     margin: 0;
   }
 
+  .lampada-azul {
+    position: relative;                /* necessário para posicionar o ::before */
+    border: 3px solid #448F96;
+    border-left: none;  
+    border-radius: 20px;
+    background-color: #dcebec;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .lampada-azul::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/lampada-azul.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .lampada-azul p {
+    margin: 0;
+  }
+
+  .lampada-topo-azul {
+  position: relative;
+  border: 3px solid #448F96;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #dcebec;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.lampada-topo-azul::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/lampada-azul.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lampada-topo-azul p {
+  margin: 0;
+}
+
   .lampada-verde {
     position: relative;                /* necessário para posicionar o ::before */
     border: 3px solid #B4D775;
@@ -1374,7 +1430,7 @@ p {
     border: 3px solid #448F96;
     border-left: none;  
     border-radius: 20px;
-    background-color: #abd7db;
+    background-color: #dcebec;
     padding: 10px 16px;
     padding-left: 70px;                /* dá espaço para o texto não colidir */
   }
@@ -1394,6 +1450,34 @@ p {
   }
 
   .alfinete-azul p {
+    margin: 0;
+  }
+
+  .alfinete-amarelo {
+    position: relative;                /* necessário para posicionar o ::before */
+    border: 3px solid #F3CA40;
+    border-left: none;  
+    border-radius: 20px;
+    background-color: #f6ebc7;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .alfinete-amarelo::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/alfinete-amarelo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .alfinete-amarelo p {
     margin: 0;
   }
 
@@ -1430,7 +1514,7 @@ p {
   border: 3px solid #448F96;
   border-top: none;                  /* remove a borda de cima */
   border-radius: 20px;      /* arredonda apenas a parte de baixo */
-  background-color: #abd7db;
+  background-color: #dcebec;
   padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
   text-align: center;
 }
