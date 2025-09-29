@@ -1,4 +1,4 @@
-const totalPaginas = 15;
+const totalPaginas = 19;
 let paginaAtual = parseInt(sessionStorage.getItem("paginaAtual")) || 1;
 const cachePaginas = {};
 const imagensPrecarregadas = window.imagensPrecarregadas || new Set();
@@ -12,7 +12,7 @@ async function carregarPagina(numero) {
     if (cachePaginas[numero]) {
       html = cachePaginas[numero];
     } else {
-      const resposta = await fetch(`paginas_unidade4/pagina${numero}.html`);
+      const resposta = await fetch(`paginas_unidade5/pagina${numero}.html`);
       html = await resposta.text();
       cachePaginas[numero] = html;
     }
@@ -214,7 +214,7 @@ async function carregarPagina(numero) {
 
 
     if (numero + 1 <= totalPaginas && !cachePaginas[numero + 1]) {
-      const respostaProx = await fetch(`paginas_unidade4/pagina${numero + 1}.html`);
+      const respostaProx = await fetch(`paginas_unidade5/pagina${numero + 1}.html`);
       const htmlProx = await respostaProx.text();
       cachePaginas[numero + 1] = htmlProx;
 
