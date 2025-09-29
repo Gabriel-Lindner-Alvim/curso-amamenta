@@ -90,7 +90,7 @@ async function carregarPagina(numero) {
         icones.forEach((i, index) => {
           i.classList.remove("active");
           const img = i.querySelector("img");
-          img.src = `./img/slide8/${index + 1}.svg`; // volta para imagem normal
+          img.src = `./img/${index + 1}.svg`; // volta para imagem normal
         });
 
         paineis.forEach(p => p.classList.remove("active"));
@@ -100,7 +100,7 @@ async function carregarPagina(numero) {
         // troca imagem para versão hover do botão clicado
         const imgAtivo = icone.querySelector("img");
         const indice = Array.from(icones).indexOf(icone) + 1;
-        imgAtivo.src = `./img/slide8/${indice}-hover.svg`;
+        imgAtivo.src = `./img/${indice}-hover.svg`;
 
         const painel = area.querySelector(`#${icone.dataset.panel}`);
         if (painel) painel.classList.add("active");

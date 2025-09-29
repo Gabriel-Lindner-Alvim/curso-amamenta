@@ -2,25 +2,59 @@
   <div class="row" style="margin-bottom: 5vh;">
 
     <div class="col-md-12 borda-inicial" style="margin-bottom: 3vh; padding-left: 12vw; padding-right: 12vw;">
-      <p>Vamos, então, aprofundar nosso conhecimento sobre o panorama da amamentação e do consumo alimentar de crianças menores de 2 anos. O gráfico a seguir demonstra os resultados do Brasil segundo o ENANI-2019 em comparação aos índices globais (dados coletados entre 2017 e 2024) e as metas para 2030 (UFRJ ,2021; WHO; UNICEF, 2024):</p>
+      <p>Vamos, então, aprofundar nosso conhecimento sobre o panorama da amamentação e do consumo alimentar de crianças
+        menores de 2 anos. O gráfico a seguir demonstra os resultados do Brasil segundo o ENANI-2019 em comparação aos
+        índices globais (dados coletados entre 2017 e 2024) e as metas para 2030 (UFRJ ,2021; WHO; UNICEF, 2024):</p>
     </div>
 
     <div style="background-color: #F1F1F4; margin-bottom: 3vh;">
-        <div class="row" style="padding: 5vh 0 5vh 0;">
-            <div class="col-md-6" style="padding-left: 12vw;">
-                <p style="color: red;"> modal aqui</p>
-            </div>
-
-            <div class="col-md-6" style="padding-right: 12vw;">
-                <div class="alfinete-topo">
-                    <p>Neste contexto, é importante lembrar que os profissionais da atenção primária são atores-chave para a reversão das baixas taxas de amamentação, especialmente no segundo ano de vida. Com informação, acolhimento e apoio contínuo às famílias, é possível avançar rumo às metas de 2030. Desempenhar bem o seu papel, com conhecimento relacionado à prática, é fundamental para sua atuação profissional no dia a dia. </p>
-                </div>
-            </div>
+      <div class="row align-items-center" style="padding: 5vh 0 5vh 0;">
+        <div class="col-md-6" style="padding-left: 12vw;">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#ModalCompreender"
+            style="background: none; border: none; padding: 0;">
+            <img src="./img/Gráfico 1.svg" onmouseover="this.src='./img/grafico-hover.svg'"
+              onmouseout="this.src='./img/Gráfico 1.svg'" class="img-fluid aumentar" draggable="false">
+          </button>
         </div>
+
+        <div class="col-md-6" style="padding-right: 12vw;">
+          <div class="alfinete-topo">
+            <p>Neste contexto, é importante lembrar que os profissionais da atenção primária são atores-chave para a
+              reversão das baixas taxas de amamentação, especialmente no segundo ano de vida. Com informação,
+              acolhimento e apoio contínuo às famílias, é possível avançar rumo às metas de 2030. Desempenhar bem o seu
+              papel, com conhecimento relacionado à prática, é fundamental para sua atuação profissional no dia a dia. 
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="col-md-12" style="padding-left: 12vw; padding-right: 12vw;">
-        <p>A seguir, você vai conhecer melhor o contexto das práticas de alimentação alimentar. Siga com os estudos e acompanhe. </p>
+      <p>A seguir, você vai conhecer melhor o contexto das práticas de alimentação alimentar. Siga com os estudos e
+        acompanhe. </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="ModalCompreender" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/Popup gráfico.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 13px; right: 14px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('ModalCompreender')).hide();">
+        </div>
+      </div>
     </div>
   </div>
 </div>

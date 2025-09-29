@@ -1397,6 +1397,34 @@ p {
   margin: 0;
 }
 
+.alfinete-topo-verde {
+  position: relative;
+  border: 3px solid #B4D775;
+  border-top: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #b5d77561;
+  padding: 30px 16px 10px;           /* padding extra no topo para não colidir com a imagem */
+  text-align: center;
+}
+
+.alfinete-topo-verde::before {
+  content: "";
+  position: absolute;
+  top: 0;                            /* fica colado no topo */
+  left: 50%;                         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);  /* metade para fora e metade para dentro */
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/alfinete-verde.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alfinete-topo-verde p {
+  margin: 0;
+}
+
 .tab-card {
   background: #f3f3f3;
   border-radius: 12px;
