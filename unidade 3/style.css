@@ -431,7 +431,7 @@ p {
 }
 
 .accordion-body {
-  background-color: #FFFBEB;
+  background-color: transparent !important;
   border-radius: 10px;
 
 }
@@ -442,7 +442,7 @@ p {
 
 .accordion-item {
   border: none;
-  background-color: #FFFBEB;
+  background-color: transparent;
 }
 
 .accordion-button::after {
@@ -521,6 +521,17 @@ p {
   transform: scale(1.03); 
 }
 
+.accordion-img-btn {
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .accordion-img-btn img {
+      display: block;
+      width: 100%; /* ajuste conforme sua necessidade */
+    }
 
 .borda-inicial {
   margin-top: 5vh;
@@ -931,7 +942,7 @@ p {
   border-radius: 12px;
   padding: 20px;
   margin-top: 40px;
-  background-color: white; /* ou a cor do fundo */
+  background-color: transparent; /* ou a cor do fundo */
 }
 
 .circle-decorativo {
@@ -1257,6 +1268,37 @@ p {
     margin: 0;
   }
 
+
+  
+  .alfinete-rose {
+    position: relative;                /* necessário para posicionar o ::before */
+  border: 3px solid #CC7465;
+  border-left: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: #ffe2dd;
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .alfinete-rose::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/alfinete-rose.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .alfinete-rose p {
+    margin: 0;
+  }
+
+
     .alfinete-lavanda {
     position: relative;                /* necessário para posicionar o ::before */
     border: 3px solid #B8B8F3;
@@ -1284,6 +1326,40 @@ p {
   .alfinete-lavanda p {
     margin: 0;
   }
+
+
+
+    .alfinete-azul {
+    position: relative;                /* necessário para posicionar o ::before */
+  border: 3px solid #448F96;
+  border-left: none;                  /* remove a borda de cima */
+  border-radius: 20px;      /* arredonda apenas a parte de baixo */
+  background-color: rgba(68, 143, 150, 0.15);
+    padding: 10px 16px;
+    padding-left: 70px;                /* dá espaço para o texto não colidir */
+  }
+
+  .alfinete-azul::before {
+    content: "";
+    position: absolute;
+    left: -25px;                       /* metade pra fora (metade de 50px) */
+    top: 50%;
+    transform: translateY(-50%);       /* centraliza verticalmente */
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/alfinete-azul.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .alfinete-azul p {
+    margin: 0;
+  }
+
+
+
+
 
   .alfinete-topo {
   position: relative;

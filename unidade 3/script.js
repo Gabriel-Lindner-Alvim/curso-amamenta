@@ -253,11 +253,115 @@ async function loadSVG(_svgFilePath, _id) {
   try {
     const response = await fetch(_svgFilePath);
     const svgCode = await response.text();
-    document.getElementById(_id).innerHTML = svgCode;
+    const container = document.getElementById(_id);
+    container.innerHTML = svgCode;
+
+    const svg = container.querySelector("svg");
+
+    // Configuração de cada grupo
+    const config = {
+      "1234": {
+        vector: "Vector_5",
+        color: "rgba(68, 143, 150, 0.2)", // verde-azulado
+        img: "./img/Cultural.svg"
+      },
+      "1235": {
+        vector: "Vector",
+        color: "rgba(204, 116, 101, 0.2)", // já usava CC7465
+        img: "./img/Psicológico.svg"
+      },
+      "1236": {
+        vector: "Vector_2",
+        color: "rgba(147, 117, 215, 0.2)", // roxo
+        img: "./img/Social.svg"
+      },
+      "1237": {
+        vector: "Vector_3",
+        color: "rgba(180, 215, 117, 0.3)", // verde claro
+        img: "./img/Processo de trabalho.svg"
+      },
+      "1238": {
+        vector: "Vector_4",
+        color: "rgba(255, 223, 114, 0.4)", // amarelo
+        img: "./img/Abordagem.svg"
+      }
+    };
+
+    // Função de reset: volta tudo ao original
+    function resetColors() {
+      Object.values(config).forEach(({ vector }) => {
+        const vec = svg.querySelector(`#${vector}`);
+        if (vec) {
+          const paths = vec.querySelectorAll("path");
+          if (paths.length > 1) {
+            const secondPath = paths[1];
+            const originalFill = secondPath.getAttribute("data-original-fill") || secondPath.getAttribute("fill") || "#000";
+            const originalOpacity = secondPath.getAttribute("data-original-opacity") || secondPath.getAttribute("fill-opacity") || "1";
+            secondPath.setAttribute("fill", originalFill);
+            secondPath.setAttribute("fill-opacity", originalOpacity);
+          }
+        }
+      });
+    }
+
+    // Para cada grupo do config
+    Object.entries(config).forEach(([num, { vector, color, img }]) => {
+      const group = svg.querySelector(`#Group\\ ${num}`);
+      if (group) {
+        group.style.cursor = "pointer";
+
+        group.addEventListener("click", () => {
+          // 1. reseta todos antes
+          resetColors();
+
+          // 2. aplica destaque no grupo clicado
+          const vec = group.querySelector(`#${vector}`);
+          if (vec) {
+            const paths = vec.querySelectorAll("path");
+            if (paths.length > 1) {
+              const secondPath = paths[1];
+
+              // salva atributos originais se ainda não
+              if (!secondPath.hasAttribute("data-original-fill")) {
+                secondPath.setAttribute("data-original-fill", secondPath.getAttribute("fill") || "#000");
+              }
+              if (!secondPath.hasAttribute("data-original-opacity")) {
+                secondPath.setAttribute("data-original-opacity", secondPath.getAttribute("fill-opacity") || "1");
+              }
+
+              secondPath.setAttribute("fill", color.replace(/, *[\d.]+\)/, ")")); // cor base sem alpha
+              secondPath.setAttribute("fill-opacity", color.match(/[\d.]+\)$/)?.[0].replace(")", "") || "0.2");
+            }
+          }
+
+          // 3. insere conteúdo no modal
+          document.getElementById("infoModalBody").innerHTML = `
+            <div style="position: relative; display: inline-block;">
+              <img src="${img}" class="img-fluid" draggable="false">
+
+              <!-- Botão de fechar -->
+              <img src="../img/botao-x.svg"
+                   onmouseover="this.src='../img/botao-x-hover.svg'"
+                   onmouseout="this.src='../img/botao-x.svg'"
+                   style="position: absolute; top: 57px; right: 62px; width: 42px; height: 42px; cursor: pointer;"
+                   draggable="false"
+                   onclick="bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();">
+            </div>
+          `;
+
+          // 4. abre modal
+          const modal = new bootstrap.Modal(document.getElementById("infoModal"));
+          modal.show();
+        });
+      }
+    });
   } catch (error) {
     console.error("Erro ao carregar o arquivo SVG:", error);
   }
 }
+
+
+
 
 async function goto(event, _selectorHide, _selectorShow){
   goto2(_selectorHide);
