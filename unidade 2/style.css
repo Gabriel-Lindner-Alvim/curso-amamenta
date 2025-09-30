@@ -431,7 +431,7 @@ p {
 }
 
 .accordion-body {
-  background-color: #FFFBEB;
+  background-color: transparent !important;
   border-radius: 10px;
 
 }
@@ -442,7 +442,7 @@ p {
 
 .accordion-item {
   border: none;
-  background-color: #FFFBEB;
+  background-color: transparent;
 }
 
 .accordion-button::after {
@@ -520,6 +520,18 @@ p {
 .accordion-button-svg:hover {
   transform: scale(1.03); 
 }
+
+.accordion-img-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .accordion-img-btn img {
+    display: block;
+    width: 100%; /* ajuste conforme sua necessidade */
+  }
 
 
 .borda-inicial {
@@ -1157,6 +1169,9 @@ p {
 
 }
 
+.cinza {
+  background: #F1F1F4 !important;
+}
 .ol-circulos {
   list-style: none;               /* tira numeração padrão */
   counter-reset: my-counter;      /* inicia contador */

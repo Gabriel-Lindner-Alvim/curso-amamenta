@@ -8,13 +8,43 @@
             <p>O Guia Alimentar para Crianças Brasileiras Menores de 2 Anos, atualizado em 2019, apresenta recomendações, pautadas em evidências científicas sólidas, sobre amamentação e alimentação complementar saudável com o objetivo de promover tanto o crescimento quanto o desenvolvimento pleno na infância.</p>
             <p>Ele reforça a orientação de que a alimentação da criança deve ter como base os alimentos in natura e/ou minimamente processados, sendo seu primeiro alimento da vida o leite materno.</p>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#Modalslide2" style="background: none; border: none; padding: 0;">
+                <img src="./img/caixa.svg" class="img-fluid aumentar" draggable="false">
+            </button>
         </div>
 
         <div class="col-md-12">
             <p>Este guia também recomenda a limitação da oferta de alimentos processados e não recomenda alimentos ultraprocessados e açúcar antes dos 2 anos de idade. Veja, a seguir, como o guia apresenta a classificação dos alimentos.</p>
+        
+            <img src="./img/slide21.svg" width="100%" style="margin-bottom: 20px;">
+            <img src="./img/slide22.svg" width="100%" style="margin-bottom: 20px;">
+            <img src="./img/slide24.svg" width="100%" style="margin-bottom: 20px;">
+            <img src="./img/slide23.svg" width="100%" style="margin-bottom: 20px;">
+            
         </div>
         
     </div>
+</div>
+
+
+<div class="modal fade" id="Modalslide2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/modal2.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 13px; right: 14px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('Modalslide2')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
