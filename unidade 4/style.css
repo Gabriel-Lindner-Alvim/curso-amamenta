@@ -1386,7 +1386,7 @@ p {
     border: 3px solid #448F96;
     border-left: none;  
     border-radius: 20px;
-    background-color: #abd7db;
+    background-color: rgba(68, 143, 150, 0.15);
     padding: 10px 16px;
     padding-left: 70px;                /* dá espaço para o texto não colidir */
   }
