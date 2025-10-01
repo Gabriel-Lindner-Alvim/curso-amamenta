@@ -17,5 +17,59 @@
                 <p style="margin-bottom: 0;"><span><i>Clique nos cards e confira dicas para melhorar a alimentação e para alimentar as crianças que ficaram doentes.</i></span></p>
             </div>
         </div>
+
+        <div class="col-md-6 text-center" style="display: flex;">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#Modalslide281" style="background: none; border: none; padding: 0;">
+                <img src="./img/Frame 1541.svg" class="img-fluid aumentar"> 
+            </button>
+        </div>
+
+        <div class="col-md-6">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#Modalslide282" style="background: none; border: none; padding: 0;">
+                <img src="./img/Frame 1542.svg" class="img-fluid aumentar">
+            </buttom>
+        </div>
     </div>
+</div>
+
+<div class="modal fade" id="Modalslide281" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/dicas1.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 35px; right: 40px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('Modalslide281')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modalslide282" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/dicas2.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 35px; right: 40px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('Modalslide282')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

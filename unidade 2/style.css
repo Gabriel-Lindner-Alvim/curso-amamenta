@@ -624,9 +624,9 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70vw; /* 70% da largura da viewport */
+  width: 45vw; /* 70% da largura da viewport */
   height: 100vh; /* ou a altura que você desejar */
-  background-image: url('img/un1/garoto\ apontando.png');
+  background-image: url('img/papa.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1914,3 +1914,62 @@ p {
 /* Painéis de conteúdo */
 .painel { display: none; }
 .painel.active { display: block; }
+
+.tab-card-vertical {
+  display: flex;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Left side tabs */
+.tab-buttons-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  border-right: 1px solid #ddd;
+}
+
+/* Base style for all buttons */
+.tab-buttons-vertical .tab-btn {
+  padding: 14px 16px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 0; /* no radius by default */
+  color: #fff; 
+}
+
+/* Colors per tab */
+.tab-buttons-vertical .tab-btn[data-tab="tab1"] {
+  background: #CC7465; /* green */
+}
+.tab-buttons-vertical .tab-btn[data-tab="tab2"] {
+  background: #DBB636; /* yellow/orange */
+}
+.tab-buttons-vertical .tab-btn[data-tab="tab3"] {
+  background: #A0C361; /* red */
+}
+.tab-buttons-vertical .tab-btn[data-tab="tab4"] {
+  background: #36ACB7; /* red */
+}
+
+/* Active state: highlight with shadow/stripe */
+.tab-buttons-vertical .tab-btn.active {
+  box-shadow: inset -4px 0 rgba(0,0,0,0.2);
+  color: #fff; 
+}
+
+/* Right side content */
+.tab-content-vertical {
+  flex: 1;
+
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
