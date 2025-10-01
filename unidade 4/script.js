@@ -248,16 +248,58 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 });
 
 carregarPagina(paginaAtual);
-
 async function loadSVG(_svgFilePath, _id) {
   try {
     const response = await fetch(_svgFilePath);
     const svgCode = await response.text();
-    document.getElementById(_id).innerHTML = svgCode;
+    const container = document.getElementById(_id);
+    container.innerHTML = svgCode;
+
+    const svg = container.querySelector("svg");
+
+    // --- INICIATIVAS: grupos que abrem links ---
+    const iniciativasLinks = {
+      "Frame 1502": "https://exemplo.com/pagina1",
+      "Frame 1503": "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/iii-plano-nacional-de-seguranca-alimentar-e-nutricional-e-aprovado",
+      "Frame 1504": "https://www.gov.br/saude/pt-br/assuntos/novo-pac-saude",
+      "Frame 1505": "https://www.cosemssp.org.br/noticias/acervo-digital/projeto-nutriser-horta-maos-na-terra-ubs-interativa/"
+    };
+
+    Object.entries(iniciativasLinks).forEach(([id, url]) => {
+      const el = svg.querySelector(`#${CSS.escape(id)}`);
+      if (el) {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", () => {
+          window.open(url, "_blank"); // abre em nova aba
+        });
+      }
+    });
+
+    // --- BLOCO 4: grupos que abrem links ---
+    const bloco4Links = {
+      "Frame 1572": "https://constituicao.stf.jus.br/dispositivo/cf-88-parte-1-titulo-8-capitulo-7-artigo-227",
+      "Frame 1572_2": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm",
+      "Frame 1572_3": "https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_alimentacao_nutricao.pdf",
+      "Frame 1572_4": "https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/programas/pnae",
+      "Frame 1572_5": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/pnaisc",
+      "Frame 1572_6": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13257.htm"
+    };
+
+    Object.entries(bloco4Links).forEach(([id, url]) => {
+      const el = svg.querySelector(`#${CSS.escape(id)}`);
+      if (el) {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", () => {
+          window.open(url, "_blank"); // abre em nova aba
+        });
+      }
+    });
+
   } catch (error) {
     console.error("Erro ao carregar o arquivo SVG:", error);
   }
 }
+
 
 async function goto(event, _selectorHide, _selectorShow){
   goto2(_selectorHide);
