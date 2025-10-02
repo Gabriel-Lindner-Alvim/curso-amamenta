@@ -1,6 +1,7 @@
 const totalPaginas = 15;
-let paginaAtual = parseInt(sessionStorage.getItem("paginaAtual")) || 1;
-const cachePaginas = {};
+const unidade = "un4";
+const storageKey = `paginaAtual_${unidade}`;
+let paginaAtual = parseInt(sessionStorage.getItem(storageKey)) || 1;const cachePaginas = {};
 const imagensPrecarregadas = window.imagensPrecarregadas || new Set();
 window.imagensPrecarregadas = imagensPrecarregadas;
 
