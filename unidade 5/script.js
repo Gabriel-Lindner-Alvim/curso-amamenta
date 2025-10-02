@@ -107,7 +107,37 @@ async function carregarPagina(numero) {
       });
     });
     
+    // --- Alternância de conteúdos (imagens + textos) ---
+    const blocoAlternavel = area.querySelector('.conteudo-alternavel');
+    if (blocoAlternavel) {
+      const imgs = blocoAlternavel.querySelectorAll('img.conteudo-item');
+      const textos = blocoAlternavel.querySelectorAll('div.conteudo-item');
+      const prevSeta = blocoAlternavel.querySelector('#prevSeta');
+      const nextSeta = blocoAlternavel.querySelector('#nextSeta');
+      let indice = 0;
     
+      function mostrarIndice(novo) {
+        imgs.forEach(i => i.classList.remove('ativo'));
+        textos.forEach(t => t.classList.remove('ativo'));
+        if (imgs[novo]) imgs[novo].classList.add('ativo');
+        if (textos[novo]) textos[novo].classList.add('ativo');
+      }
+    
+      if (nextSeta) {
+        nextSeta.addEventListener('click', () => {
+          indice = (indice + 1) % imgs.length;
+          mostrarIndice(indice);
+        });
+      }
+    
+      if (prevSeta) {
+        prevSeta.addEventListener('click', () => {
+          indice = (indice - 1 + imgs.length) % imgs.length;
+          mostrarIndice(indice);
+        });
+      }
+    }
+
 
     const stepButtons = area.querySelectorAll(".step");
     const stepPanels = area.querySelectorAll(".step-panel");

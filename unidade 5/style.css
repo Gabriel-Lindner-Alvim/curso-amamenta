@@ -2004,3 +2004,125 @@ p {
   .lampada-lavanda p {
     margin: 0;
   }
+
+  .conteudo-item {
+  display: none;
+}
+.conteudo-item.ativo {
+  display: block;
+}
+
+/* Variante Roxo (#5B448E) */
+.ol-circulos.roxo li {
+  color: #5B448E;
+}
+.ol-circulos.roxo li::before {
+  content: counter(my-counter);
+  background: #5B448E;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Variante Verde-Água (#448F96) */
+.ol-circulos.verdeagua li {
+  color: #448F96;
+}
+.ol-circulos.verdeagua li::before {
+  content: counter(my-counter);
+  background: #448F96;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Variante Verde-Escuro (#325158) */
+.ol-circulos.verdeescuro li {
+  color: #325158;
+}
+.ol-circulos.verdeescuro li::before {
+  content: counter(my-counter);
+  background: #325158;
+  color: white;
+  font-weight: bold;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Variante Terracota (#CC7465) */
+.ol-circulos.terracota li {
+  color: #CC7465;
+}
+.ol-circulos.terracota li::before {
+  content: counter(my-counter);
+  background: #CC7465;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Variante Verde-Musgo (#708B3F) */
+.ol-circulos.musgo li {
+  color: #708B3F;
+}
+.ol-circulos.musgo li::before {
+  content: counter(my-counter);
+  background: #708B3F;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.ol-circulos.roxo {
+  counter-reset: my-counter 0;  
+}
+
+.ol-circulos.verdeagua {
+  counter-reset: my-counter 1;  
+}
+
+.ol-circulos.verdeescuro {
+  counter-reset: my-counter 2; 
+}
+
+.ol-circulos.terracota {
+  counter-reset: my-counter 3;
+}
+
+.ol-circulos.musgo {
+  counter-reset: my-counter 4; 
+}
