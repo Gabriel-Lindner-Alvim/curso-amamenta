@@ -1,13 +1,18 @@
 <div class="container-fluid text-start">
     <div class="row" style="margin-bottom: 5vh;">
-        <div style="background-color: #F1F1F4;">
-            <div class="col-md-6 borda-inicial" style="padding-left: 12vw;">
-                <p>Apesar do aumento progressivo na cobertura do registro dos marcadores de consumo alimentar, conforme mostrado na série histórica que você poderá conferir no gráfico, este acompanhamento está ainda muito aquém do esperado. Essa baixa cobertura está principalmente relacionada com a falta de registro dos dados durante os atendimentos na APS.</p>
-                <p>Por isso, é importante que você, profissional de saúde da APS, realize o registro das informações no e-SUS APS para que estes dados migrem para o SISVAN adequadamente, e desta forma você possa gerar os relatórios para o acompanhamento do seu território.</p>
-            </div>
+        <div style="background-color: #F1F1F4; padding-bottom: 5vh;">
+            <div class="row" style="display: flex; justify-content: center; align-items: center;">
+               <div class="col-md-6 borda-inicial" style="padding-left: 12vw;">
+                   <p>Apesar do aumento progressivo na cobertura do registro dos marcadores de consumo alimentar, conforme mostrado na série histórica que você poderá conferir no gráfico, este acompanhamento está ainda muito aquém do esperado. Essa baixa cobertura está principalmente relacionada com a falta de registro dos dados durante os atendimentos na APS.</p>
+                   <p>Por isso, é importante que você, profissional de saúde da APS, realize o registro das informações no e-SUS APS para que estes dados migrem para o SISVAN adequadamente, e desta forma você possa gerar os relatórios para o acompanhamento do seu território.</p>
+               </div>
 
-            <div class="col-md-6 borda-inicial" style="padding-right: 12vw;">
-                <img src="placeholder">
+               <div class="col-md-6 borda-inicial" style="padding-right: 12vw;">
+                   <button type="button" data-bs-toggle="modal" data-bs-target="#ModalCompreender"
+                       style="background: none; border: none; padding: 0;">
+                       <img src="./img/grafico.svg"  class="img-fluid aumentar" draggable="false">
+                     </button>
+                </div>
             </div>
         </div>
 
@@ -15,6 +20,32 @@
             <p>Agora que você já conhece o SISVAN e os principais indicadores de amamentação, alimentação complementar e da situação nutricional de crianças no Brasil, que tal buscar informações dos indicadores do seu município e da sua UBS?</p>
 
             <p>Com esses dados, é possível saber quais ações precisam ser intensificadas, de acordo com o que for encontrado. Confira algumas informações importantes para serem investigadas.</p>
+
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 3vh; margin-bottom: 3vh;">
+                <img src="./img/relevantes.svg" width="100%" style="max-width:  1300px;">
+            </div>
         </div>
     </div>
+</div>
+
+
+<div class="modal fade" id="ModalCompreender" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/Popup gráfico.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 13px; right: 14px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('ModalCompreender')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
