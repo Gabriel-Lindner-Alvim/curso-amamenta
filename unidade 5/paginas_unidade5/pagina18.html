@@ -6,20 +6,105 @@
             <p>Para contextualizar, vamos agora ler a experiência de Maria e sua filha Janice.</p>
         </div>
 
-        <div>
-            <div class="col-md-6">
-                <p></p>
-            </div>
-            <div class="col-md-6">
-                <p></p>
-            </div>
-        </div>
-
         <div class="col-md-12">
             <div class="bullet-item">
                 <img src="../unidade 1/img/clique.svg">
                 <p style="margin-bottom: 0;"><span><i>Agora clique e confira duas situações possíveis. Acompanhe e reflita sobre o tema!</i></span></p>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <!-- Imagem circular -->
+                <img src="./img/slide181.svg" 
+                    style="width: 70%; max-width: 400px; object-fit: cover; border-radius: 50%;">
+
+                <!-- Retângulo rosé com conteúdo -->
+                <div style="background-color: #e8b7b7; padding: 15px; border-radius: 10px; flex: 1;">
+                <p style="margin: 0; font-weight: bold; color: #803F34;">Situação 1</p>
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="./img/situacao1.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+
+                <!-- Botão imagem -->
+                <div style="margin-top: 15px; text-align: right;">
+                    <button style="background: none; border: none; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#ModalCompreender">
+                    <img src="./img/transcricao.svg" alt="Transcrição do áudio" style="width: 150px;">
+                    </button>
+                </div>
+                </div>
+                </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <!-- Imagem circular -->
+                <img src="./img/slide182.svg" 
+                    style="width: 70%; max-width: 400px; object-fit: cover; border-radius: 50%;">
+
+                <!-- Retângulo rosé com conteúdo -->
+                <div style="background-color: #C7E296; padding: 15px; border-radius: 10px; flex: 1;">
+                <p style="margin: 0; font-weight: bold; color: #708B3F;">Situação 2</p>
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="./img/situacao2.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+
+                <!-- Botão imagem -->
+                <div style="margin-top: 15px; text-align: right;">
+                    <button style="background: none; border: none; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#ModalCompreender2">
+                    <img src="./img/transcricao.svg" alt="Transcrição do áudio" style="width: 150px;">
+                    </button>
+                </div>
+                </div>
+                </div>
+
+        </div>
+
     </div>
+</div>
+
+
+<div class="modal fade" id="ModalCompreender" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/situacao1.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 13px; right: 14px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('ModalCompreender')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ModalCompreender2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body position-relative p-0" style="text-align: center;">
+
+        <!-- Container for image and overlay -->
+        <div style="position: relative; display: inline-block;">
+          <img src="./img/situacao2.svg" class="img-fluid" draggable="false">
+
+          <!-- Close button in top-right of image -->
+          <img src="../img/botao-x.svg" onmouseover="this.src='../img/botao-x-hover.svg'"
+            onmouseout="this.src='../img/botao-x.svg'"
+            style="position: absolute; top: 13px; right: 14px; width: 42px; height: 42px; cursor: pointer;"
+            draggable="false"
+            onclick="bootstrap.Modal.getInstance(document.getElementById('ModalCompreender2')).hide();">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
