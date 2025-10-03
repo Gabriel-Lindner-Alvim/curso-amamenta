@@ -254,11 +254,72 @@ async function loadSVG(_svgFilePath, _id) {
   try {
     const response = await fetch(_svgFilePath);
     const svgCode = await response.text();
-    document.getElementById(_id).innerHTML = svgCode;
+    const container = document.getElementById(_id);
+    container.innerHTML = svgCode;
+
+    const svg = container.querySelector("svg");
+    if (!svg) return;
+
+    // Config: cor do retângulo + arquivo de conteúdo para cada botão (1..8)
+    const config = {
+      "1": { color: "#CCE3E5", conteudo: "img/Conteudo1.svg" },
+      "2": { color: "#F8E6AA", conteudo: "img/Conteudo2.svg" },
+      "3": { color: "#F2D7D2", conteudo: "img/Conteudo3.svg" },
+      "4": { color: "#DBE4CB", conteudo: "img/Conteudo4.svg" },
+      "5": { color: "#D3D3FE", conteudo: "img/Conteudo5.svg" },
+      "6": { color: "#EFD3CE", conteudo: "img/Conteudo6.svg" },
+      "7": { color: "#F8E6AA", conteudo: "img/Conteudo7.svg" },
+      "8": { color: "#CAEAF2", conteudo: "img/Conteudo8.svg" }
+    };
+
+    // Se este é o SVG dos botões, conecta os cliques
+    if (_id === "svg-botoes") {
+      Object.keys(config).forEach(num => {
+        const groupBtn = svg.querySelector(`#${CSS.escape(num)}`);
+        if (!groupBtn) return;
+
+        groupBtn.style.cursor = "pointer";
+        groupBtn.addEventListener("click", async () => {
+          // 1) Reseta (opcional): volta todos os fills originais dos retângulos dentro de "Rectangle …"
+          svg.querySelectorAll(`g[id^="Rectangle"] > rect:first-of-type`).forEach(r => {
+            const orig = r.getAttribute("data-original-fill");
+            if (orig) r.setAttribute("fill", orig);
+          });
+
+          // 2) Pega o primeiro <rect> dentro do grupo "Rectangle …" deste botão e aplica a cor
+          const targetRect =
+            groupBtn.querySelector(`g[id^="Rectangle"] > rect:first-of-type`)
+            || groupBtn.querySelector(":scope rect"); // fallback, se necessário
+
+          if (targetRect) {
+            // guarda fill original uma única vez
+            if (!targetRect.hasAttribute("data-original-fill")) {
+              targetRect.setAttribute("data-original-fill", targetRect.getAttribute("fill") || "#000");
+            }
+            targetRect.setAttribute("fill", config[num].color);
+          } else {
+            console.warn(`Não encontrei <rect> alvo dentro do botão ${num}. Verifique a hierarquia.`);
+          }
+
+          // 3) Substitui o conteúdo do container por outro SVG específico do botão
+          try {
+            const resp = await fetch(config[num].conteudo);
+            const txt = await resp.text();
+            document.getElementById("svg-conteudobotoes").innerHTML = txt;
+          } catch (e) {
+            document.getElementById("svg-conteudobotoes").innerHTML =
+              `<p>Erro ao carregar conteúdo do botão ${num}</p>`;
+            console.error(e);
+          }
+        });
+      });
+    }
   } catch (error) {
     console.error("Erro ao carregar o arquivo SVG:", error);
   }
 }
+
+
 
 async function goto(event, _selectorHide, _selectorShow){
   goto2(_selectorHide);
