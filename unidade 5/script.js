@@ -280,6 +280,20 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 carregarPagina(paginaAtual);
 
+// Adiciona evento nos <li> clicáveis da página 1
+document.addEventListener("click", (event) => {
+  const item = event.target.closest("ol.ol-circulos li");
+  if (item && item.dataset.pagina) {
+    event.preventDefault();
+    const destino = parseInt(item.dataset.pagina, 10);
+    
+    paginaAtual = destino;
+    
+    carregarPagina(destino);
+  }
+});
+
+
 async function loadSVG(_svgFilePath, _id) {
   try {
     const response = await fetch(_svgFilePath);
